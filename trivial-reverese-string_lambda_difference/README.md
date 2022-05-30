@@ -12,11 +12,11 @@ The difference is exactly 88 bytes in size of executable (on both platforms) in 
 Where does this difference come from?
 -------------------------------------
 
-It seems that using lambda eliminates the need to link with glibc, thus the *__libc_csu_init* section is not present<br>
-in the object file (is not statically compiled into our program).<br>
+It seems that using lambda eliminates the need to link with glibc, thus the `__libc_csu_init` section<br> 
+is not present in the object file (is not statically compiled into our program).<br>
 See: https://michaeltrottier.com/en/gdb/gdb-what-happens-main/ 
 
-Btw. the subject releats to the ROP gadget, and may be relevant to specific compiler version:
+Btw. the subject releats to the **ROP gadget**, and may be relevant to specific compiler version:
 https://github.com/bminor/glibc/commit/035c012e32c11e84d64905efaf55e74f704d3668 .
 
 Note: Version used to compile was: *gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.1)*.
